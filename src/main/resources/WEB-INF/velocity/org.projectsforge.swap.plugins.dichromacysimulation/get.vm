@@ -1,0 +1,23 @@
+#set( $title = "Settings" )
+#parse("header.vm.included")
+
+<h3>Dichromacy simulation</h3>
+
+<form method="post" action="#">
+  <p>
+  <label for="deficiency">Deficiency to simulate: </label>
+  <select name="deficiency">
+    #foreach( $evalue in $values)
+      #if( $evalue == $value )
+        <option value="$evalue" selected>$evalue</option>
+      #else
+        <option value="$evalue">$evalue</option>
+      #end
+    #end
+  </select>
+  </p>
+
+  <p class="submit"><input type="submit" value="Save changes"/></p>
+</form>
+
+#parse("footer.vm.included")
